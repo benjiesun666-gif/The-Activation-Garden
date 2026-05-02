@@ -1,0 +1,116 @@
+{
+  "experiment": "Multi-seed MNIST activation shapes",
+  "seeds": 5,
+  "results": [
+    {
+      "seed": 0,
+      "acc": 0.9621,
+      "layers": {
+        "conv1": {
+          "exp-like": 5,
+          "linear": 5,
+          "other": 6
+        },
+        "conv2": {
+          "exp-like": 16,
+          "linear": 5,
+          "other": 11
+        },
+        "conv3": {
+          "exp-like": 64,
+          "linear": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "acc": 0.9611,
+      "layers": {
+        "conv1": {
+          "exp-like": 5,
+          "linear": 7,
+          "other": 4
+        },
+        "conv2": {
+          "exp-like": 12,
+          "linear": 11,
+          "other": 9
+        },
+        "conv3": {
+          "exp-like": 64,
+          "linear": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "acc": 0.9617,
+      "layers": {
+        "conv1": {
+          "exp-like": 5,
+          "linear": 1,
+          "other": 10
+        },
+        "conv2": {
+          "exp-like": 14,
+          "linear": 8,
+          "other": 10
+        },
+        "conv3": {
+          "exp-like": 64,
+          "linear": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "acc": 0.9616,
+      "layers": {
+        "conv1": {
+          "exp-like": 6,
+          "linear": 3,
+          "other": 7
+        },
+        "conv2": {
+          "exp-like": 14,
+          "linear": 5,
+          "other": 13
+        },
+        "conv3": {
+          "exp-like": 64,
+          "linear": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "acc": 0.9627,
+      "layers": {
+        "conv1": {
+          "exp-like": 4,
+          "linear": 5,
+          "other": 7
+        },
+        "conv2": {
+          "exp-like": 13,
+          "linear": 6,
+          "other": 13
+        },
+        "conv3": {
+          "exp-like": 64,
+          "linear": 0,
+          "other": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "mean_acc": 0.9618399999999999,
+    "std_acc": 0.0005351635264103935
+  },
+  "script": "mnist/train_mnist_multiseed.py"
+}

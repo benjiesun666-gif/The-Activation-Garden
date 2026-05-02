@@ -1,0 +1,18 @@
+{
+  "experiment": "C1 continuity analysis - unconstrained PiecewiseEML",
+  "derivative_mismatch_at_x0": {
+    "mean": 0.57,
+    "std": 0.17,
+    "max": null,
+    "channels_below_0.01_pct": 0.1
+  },
+  "value_mismatch_at_x0": {
+    "mean": 0.177,
+    "std": null,
+    "max": null
+  },
+  "total_channels": 896,
+  "conclusion": "Network does not discover C1 continuity; derivative gap persists.",
+  "script": "c1_continuity.py",
+  "date": "2026-04-28"
+}

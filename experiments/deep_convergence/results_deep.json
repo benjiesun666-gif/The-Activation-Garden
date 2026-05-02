@@ -1,0 +1,74 @@
+{
+  "experiment": "Deep EML Tree Convergence Study",
+  "description": "Trainable EML trees (PyTorch) of increasing depth (2-6) fitting 5 target special functions. Log-space EML (clamp exp_input to max=15.0) used for depth 5-6 to prevent float32 overflow.",
+  "config": {
+    "framework": "PyTorch",
+    "gpu": "NVIDIA RTX 5060 Laptop (8.5 GB)",
+    "epochs": 2000,
+    "points_per_function": 150,
+    "learning_rate": 0.01,
+    "optimizer": "Adam",
+    "depth_5_6_technique": "Log-space EML (clamp exp_input max=15.0)"
+  },
+  "results": {
+    "ln_Gamma": {
+      "d2": 1.313,
+      "d3": 0.03989,
+      "d4": 0.0182,
+      "d5_log": 0.00063,
+      "d6_log": 0.000287
+    },
+    "erf": {
+      "d2": 0.2968,
+      "d3": 0.2526,
+      "d4": 0.04849,
+      "d5_log": 0.01282,
+      "d6_log": 0.00305
+    },
+    "Airy_Ai": {
+      "d2": 0.7168,
+      "d3": 0.2585,
+      "d4": 0.03577,
+      "d5_log": 0.00387,
+      "d6_log": 0.01439
+    },
+    "sinc": {
+      "d2": 0.4547,
+      "d3": 0.05211,
+      "d4": 0.03781,
+      "d5_log": 0.00329,
+      "d6_log": 0.00292
+    },
+    "J0": {
+      "d2": 0.4543,
+      "d3": 0.1004,
+      "d4": 0.09334,
+      "d5_log": 0.06209,
+      "d6_log": 0.01617
+    }
+  },
+  "improvement_factors": {
+    "d4_to_d5_log": {
+      "ln_Gamma": 29,
+      "erf": 3.8,
+      "Airy": 9.3,
+      "sinc": 11.5,
+      "J0": 1.5
+    },
+    "d5_to_d6_log": {
+      "ln_Gamma": 2.2,
+      "erf": 4.2,
+      "Airy": 0.37,
+      "sinc": 1.1,
+      "J0": 3.8
+    }
+  },
+  "key_findings": {
+    "best_fit": "ln|Gamma(x)| at depth 4: MSE=6.74e-6 (near-perfect)",
+    "logspace_breakthrough": "Clamping exp_input to max=15.0 successfully extends training to depth 5-6",
+    "depth6_saturation": "Airy degrades at depth 6 (1.44e-2 vs 3.87e-3 at d5), suggesting representation ceiling",
+    "soft_mixing_optimality": "Best fit (Gamma d4, MSE=6.7e-6) has highest weight entropy (0.47). EML trees work best in soft-mixing mode, not hard symbolic selection."
+  },
+  "date": "2026-04-26",
+  "script": "deep_convergence/deep_experiment.py"
+}

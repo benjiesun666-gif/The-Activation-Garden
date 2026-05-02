@@ -1,0 +1,42 @@
+{
+  "config": {
+    "hidden_dim": 32,
+    "num_layers": 4,
+    "alpha": 0.1,
+    "epochs": 5000,
+    "n_collocation": 2000
+  },
+  "results": {
+    "Tanh": {
+      "activation": "Tanh",
+      "final_l2_error": 0.0020793997682631016,
+      "num_params": 3297,
+      "training_time_s": 29.3,
+      "epochs_to_0.1": 200,
+      "epochs_to_0.05": 200,
+      "epochs_to_0.02": 400,
+      "epochs_to_0.01": 400
+    },
+    "ReLU": {
+      "activation": "ReLU",
+      "final_l2_error": 0.614830493927002,
+      "num_params": 3297,
+      "training_time_s": 23.4,
+      "epochs_to_0.1": -1,
+      "epochs_to_0.05": -1,
+      "epochs_to_0.02": -1,
+      "epochs_to_0.01": -1
+    },
+    "EML": {
+      "activation": "EML",
+      "final_l2_error": 0.035412877798080444,
+      "num_params": 3809,
+      "training_time_s": 79.4,
+      "epochs_to_0.1": 3000,
+      "epochs_to_0.05": 3800,
+      "epochs_to_0.02": -1,
+      "epochs_to_0.01": -1
+    }
+  },
+  "script": "pinn/pinn_experiment.py"
+}

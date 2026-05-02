@@ -1,0 +1,384 @@
+{
+  "config": {
+    "n_points": 200,
+    "noise_pct": 0.001,
+    "epochs": 3000,
+    "eml_depths": [
+      3,
+      4
+    ],
+    "device": "cuda"
+  },
+  "comparison": [
+    {
+      "eq": "Eq 1",
+      "name": "I.1 Newton's Gravity",
+      "complexity": "simple",
+      "eml_r2": 0.681487,
+      "mip_r2": 0.994116,
+      "r2_diff": -0.31263,
+      "winner": "MIP",
+      "eml_formula": "eml(1,eml(eml(1,1),1))",
+      "mip_formula": "0.9237/x^2 + 0.0137",
+      "eml_time_s": 40.8,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    },
+    {
+      "eq": "Eq 2",
+      "name": "I.2 Kinetic Energy",
+      "complexity": "simple",
+      "eml_r2": 0.999942,
+      "mip_r2": 0.994029,
+      "r2_diff": 0.005913,
+      "winner": "EML",
+      "eml_formula": "eml(x,eml(eml(1,eml(x,x)),eml(eml(1,1),eml(x,x))))",
+      "mip_formula": "0.9237*x^2 + 0.6210",
+      "eml_time_s": 37.1,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    },
+    {
+      "eq": "Eq 3",
+      "name": "I.3 Relativistic Energy",
+      "complexity": "moderate",
+      "eml_r2": 0.99985,
+      "mip_r2": 0.87431,
+      "r2_diff": 0.12554,
+      "winner": "EML",
+      "eml_formula": "eml(x,1)",
+      "mip_formula": "1.2690*x^2 + 0.8532",
+      "eml_time_s": 34.5,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    },
+    {
+      "eq": "Eq 4",
+      "name": "I.4 Ideal Gas Law",
+      "complexity": "simple",
+      "eml_r2": 0.999985,
+      "mip_r2": 0.999991,
+      "r2_diff": -6e-06,
+      "winner": "TIE",
+      "eml_formula": "eml(1,eml(eml(1,x),x))",
+      "mip_formula": "100.0000*sin(0.0100*x) + 0.0100",
+      "eml_time_s": 34.0,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    },
+    {
+      "eq": "Eq 5",
+      "name": "I.5 Coulomb's Law",
+      "complexity": "simple",
+      "eml_r2": 0.999982,
+      "mip_r2": 0.994688,
+      "r2_diff": 0.005294,
+      "winner": "EML",
+      "eml_formula": "eml(x,1)",
+      "mip_formula": "6.2102*x + 0.0100",
+      "eml_time_s": 34.6,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    },
+    {
+      "eq": "Eq 6",
+      "name": "II.1 Planck's Law",
+      "complexity": "complex",
+      "eml_r2": 0.492684,
+      "mip_r2": 0.998111,
+      "r2_diff": -0.505427,
+      "winner": "MIP",
+      "eml_formula": "eml(1,eml(x,eml(1,x)))",
+      "mip_formula": "1.2690/x^3 + 0.0100",
+      "eml_time_s": 18.2,
+      "mip_time_s": 0.1,
+      "eml_params": 58
+    },
+    {
+      "eq": "Eq 7",
+      "name": "I.6 Hooke's Law",
+      "complexity": "simple",
+      "eml_r2": 0.731338,
+      "mip_r2": 0.05312,
+      "r2_diff": 0.678218,
+      "winner": "EML",
+      "eml_formula": "eml(eml(1,eml(x,1)),eml(eml(x,1),1))",
+      "mip_formula": "3.7276*sin(1.0000*x) + 0.0100",
+      "eml_time_s": 19.0,
+      "mip_time_s": 0.1,
+      "eml_params": 58
+    },
+    {
+      "eq": "Eq 8",
+      "name": "I.7 Photon Energy",
+      "complexity": "simple",
+      "eml_r2": 0.99994,
+      "mip_r2": 0.962042,
+      "r2_diff": 0.037899,
+      "winner": "EML",
+      "eml_formula": "eml(x,eml(eml(1,x),eml(x,1)))",
+      "mip_formula": "26.8270*sin(0.1389*x) + 0.0100",
+      "eml_time_s": 18.4,
+      "mip_time_s": 0.1,
+      "eml_params": 58
+    },
+    {
+      "eq": "Eq 9",
+      "name": "I.8 Spring Potential Energy",
+      "complexity": "simple",
+      "eml_r2": 0.981635,
+      "mip_r2": 0.976287,
+      "r2_diff": 0.005348,
+      "winner": "EML",
+      "eml_formula": "eml(x,eml(1,eml(x,1)))",
+      "mip_formula": "1.2690*x^2 + 7.8805",
+      "eml_time_s": 18.7,
+      "mip_time_s": 0.1,
+      "eml_params": 58
+    },
+    {
+      "eq": "Eq 10",
+      "name": "I.9 Velocity under constant acceleration",
+      "complexity": "simple",
+      "eml_r2": 0.999888,
+      "mip_r2": 0.990567,
+      "r2_diff": 0.009321,
+      "winner": "EML",
+      "eml_formula": "eml(x,eml(1,x))",
+      "mip_formula": "3.2903*x + 0.6210",
+      "eml_time_s": 18.0,
+      "mip_time_s": 0.1,
+      "eml_params": 58
+    },
+    {
+      "eq": "Eq 11",
+      "name": "I.10 Joule's Law (heating)",
+      "complexity": "simple",
+      "eml_r2": 0.999991,
+      "mip_r2": 0.983537,
+      "r2_diff": 0.016454,
+      "winner": "EML",
+      "eml_formula": "eml(x,eml(eml(eml(1,1),eml(x,x)),x))",
+      "mip_formula": "1.7433*x^2 + 2.2122",
+      "eml_time_s": 35.4,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    },
+    {
+      "eq": "Eq 12",
+      "name": "I.11 de Broglie Wavelength",
+      "complexity": "simple",
+      "eml_r2": 0.997595,
+      "mip_r2": 0.996467,
+      "r2_diff": 0.001128,
+      "winner": "EML",
+      "eml_formula": "eml(1,eml(x,eml(eml(1,1),1)))",
+      "mip_formula": "6.2102/x + 0.0924",
+      "eml_time_s": 34.3,
+      "mip_time_s": 0.1,
+      "eml_params": 122
+    }
+  ],
+  "summary": {
+    "avg_eml_r2": 0.9070264166666666,
+    "avg_mip_r2": 0.90143875,
+    "eml_wins": 9,
+    "mip_wins": 2,
+    "total_eqs": 12
+  },
+  "details": {
+    "Eq 1": {
+      "eml": {
+        "r2": 0.6814868450164795,
+        "mse": 0.014058761298656464,
+        "formula": "eml(1,eml(eml(1,1),1))",
+        "time": 40.76526474952698,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.994116488430831,
+        "formula": "0.9237/x^2 + 0.0137",
+        "time": 0.10805034637451172,
+        "n_templates": 14
+      }
+    },
+    "Eq 2": {
+      "eml": {
+        "r2": 0.999942421913147,
+        "mse": 0.0031040667090564966,
+        "formula": "eml(x,eml(eml(1,eml(x,x)),eml(eml(1,1),eml(x,x))))",
+        "time": 37.103249311447144,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.9940289685771863,
+        "formula": "0.9237*x^2 + 0.6210",
+        "time": 0.10028433799743652,
+        "n_templates": 14
+      }
+    },
+    "Eq 3": {
+      "eml": {
+        "r2": 0.9998502135276794,
+        "mse": 1.3525455869967118e-05,
+        "formula": "eml(x,1)",
+        "time": 34.53845930099487,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.874310447502683,
+        "formula": "1.2690*x^2 + 0.8532",
+        "time": 0.1015164852142334,
+        "n_templates": 14
+      }
+    },
+    "Eq 4": {
+      "eml": {
+        "r2": 0.9999850392341614,
+        "mse": 0.0001021440839394927,
+        "formula": "eml(1,eml(eml(1,x),x))",
+        "time": 33.95448923110962,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.9999910380425922,
+        "formula": "100.0000*sin(0.0100*x) + 0.0100",
+        "time": 0.10200834274291992,
+        "n_templates": 14
+      }
+    },
+    "Eq 5": {
+      "eml": {
+        "r2": 0.9999822378158569,
+        "mse": 0.0012934156693518162,
+        "formula": "eml(x,1)",
+        "time": 34.61566758155823,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.9946879335271537,
+        "formula": "6.2102*x + 0.0100",
+        "time": 0.10096502304077148,
+        "n_templates": 14
+      }
+    },
+    "Eq 6": {
+      "eml": {
+        "r2": 0.49268364906311035,
+        "mse": 1.375479817390442,
+        "formula": "eml(1,eml(x,eml(1,x)))",
+        "time": 18.243969440460205,
+        "n_params": 58,
+        "best_depth": 3
+      },
+      "mip": {
+        "r2": 0.9981109178871522,
+        "formula": "1.2690/x^3 + 0.0100",
+        "time": 0.10240817070007324,
+        "n_templates": 14
+      }
+    },
+    "Eq 7": {
+      "eml": {
+        "r2": 0.7313376665115356,
+        "mse": 56.54288101196289,
+        "formula": "eml(eml(1,eml(x,1)),eml(eml(x,1),1))",
+        "time": 18.977960348129272,
+        "n_params": 58,
+        "best_depth": 3
+      },
+      "mip": {
+        "r2": 0.05312005936280573,
+        "formula": "3.7276*sin(1.0000*x) + 0.0100",
+        "time": 0.10500645637512207,
+        "n_templates": 14
+      }
+    },
+    "Eq 8": {
+      "eml": {
+        "r2": 0.9999402165412903,
+        "mse": 0.00443751597777009,
+        "formula": "eml(x,eml(eml(1,x),eml(x,1)))",
+        "time": 18.401727199554443,
+        "n_params": 58,
+        "best_depth": 3
+      },
+      "mip": {
+        "r2": 0.9620416890576773,
+        "formula": "26.8270*sin(0.1389*x) + 0.0100",
+        "time": 0.10127735137939453,
+        "n_templates": 14
+      }
+    },
+    "Eq 9": {
+      "eml": {
+        "r2": 0.9816352128982544,
+        "mse": 37.11474609375,
+        "formula": "eml(x,eml(1,eml(x,1)))",
+        "time": 18.70366072654724,
+        "n_params": 58,
+        "best_depth": 3
+      },
+      "mip": {
+        "r2": 0.9762869072706647,
+        "formula": "1.2690*x^2 + 7.8805",
+        "time": 0.10004210472106934,
+        "n_templates": 14
+      }
+    },
+    "Eq 10": {
+      "eml": {
+        "r2": 0.9998880624771118,
+        "mse": 0.008479933254420757,
+        "formula": "eml(x,eml(1,x))",
+        "time": 18.044267892837524,
+        "n_params": 58,
+        "best_depth": 3
+      },
+      "mip": {
+        "r2": 0.9905671773299813,
+        "formula": "3.2903*x + 0.6210",
+        "time": 0.10700726509094238,
+        "n_templates": 14
+      }
+    },
+    "Eq 11": {
+      "eml": {
+        "r2": 0.9999911189079285,
+        "mse": 0.0020000215154141188,
+        "formula": "eml(x,eml(eml(eml(1,1),eml(x,x)),x))",
+        "time": 35.38527321815491,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.9835367992922346,
+        "formula": "1.7433*x^2 + 2.2122",
+        "time": 0.10326075553894043,
+        "n_templates": 14
+      }
+    },
+    "Eq 12": {
+      "eml": {
+        "r2": 0.9975945949554443,
+        "mse": 0.0037557792384177446,
+        "formula": "eml(1,eml(x,eml(eml(1,1),1)))",
+        "time": 34.317777156829834,
+        "n_params": 122,
+        "best_depth": 4
+      },
+      "mip": {
+        "r2": 0.9964670194484143,
+        "formula": "6.2102/x + 0.0924",
+        "time": 0.10384798049926758,
+        "n_templates": 14
+      }
+    }
+  },
+  "script": "feynman/feynman_experiment.py"
+}

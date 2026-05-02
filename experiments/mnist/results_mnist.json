@@ -1,0 +1,48 @@
+{
+  "experiment": "MNIST Digit Classification",
+  "description": "Benchmark comparison of EML activation function vs ReLU, GELU, Swish on MNIST",
+  "config": {
+    "dataset": "MNIST",
+    "architecture": "3-layer CNN (Conv-BN-Activation x3, FC)",
+    "batch_size": 128,
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "scheduler": "CosineAnnealingLR",
+    "normalization": "mean=0.1307, std=0.3081"
+  },
+  "results": {
+    "ReLU": {
+      "accuracy": 0.9806,
+      "accuracy_pct": "98.06%",
+      "parameters": 24170
+    },
+    "GELU": {
+      "accuracy": 0.9843,
+      "accuracy_pct": "98.43%",
+      "parameters": 24170
+    },
+    "Swish": {
+      "accuracy": 0.9846,
+      "accuracy_pct": "98.46%",
+      "parameters": 24170
+    },
+    "EML": {
+      "accuracy": 0.9759,
+      "accuracy_pct": "97.59%",
+      "parameters": 24394,
+      "init": "identity",
+      "delta_vs_relu": -0.0047
+    }
+  },
+  "key_findings": {
+    "eml_vs_relu": "EML achieves 97.59% vs ReLU 98.06% \u2014 only 0.47pp gap",
+    "best_activation": "Swish (98.46%) > GELU (98.43%) > ReLU (98.06%) > EML (97.59%)",
+    "shallow_networks": "EML performs well in shallow (3-layer) networks, spontaneously learns ReLU-like shapes in early layers",
+    "learned_shapes": "conv1: 38% exp-like, conv2: 69% exp-like, conv3: 89% near-linear \u2014 automatic layer-wise differentiation"
+  },
+  "date": "2026-04-26",
+  "model_path": "eml_mnist_v2.pt",
+  "script": "mnist/train_mnist.py"
+}

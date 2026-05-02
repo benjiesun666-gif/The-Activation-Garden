@@ -1,0 +1,27 @@
+{
+  "experiment": "PINN + PiecewiseFree",
+  "config": {
+    "epochs": 5000,
+    "lr": 0.001
+  },
+  "results": {
+    "Heat": {
+      "l2": 0.179242,
+      "time": 125.7
+    },
+    "Burgers": {
+      "l2": 0.011472,
+      "time": 119.4
+    },
+    "AllenCahn": {
+      "l2": 0.002441,
+      "time": 157.8
+    },
+    "Lorenz": {
+      "l2": 16.790701,
+      "time": 117.8
+    }
+  },
+  "date": "2026-04-30",
+  "script": "pinn/pinn_pwfree.py"
+}

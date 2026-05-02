@@ -1,0 +1,18 @@
+{
+  "experiment": "Euler-Bernoulli beam PINN",
+  "config": {
+    "epochs": 10000,
+    "lr": 0.001,
+    "weighted_losses": true,
+    "grad_clip": 1.0
+  },
+  "results": {
+    "tanh": 0.008637,
+    "relu": 4.9e-05,
+    "eml": 0.04559,
+    "pw_c1": 0.005567,
+    "pw_free": 0.001656
+  },
+  "script": "pinn/beam_fix.py",
+  "date": "2026-04-30"
+}

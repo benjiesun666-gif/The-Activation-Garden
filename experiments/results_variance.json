@@ -1,0 +1,18 @@
+{
+  "experiment": "Variance propagation through VGG-8",
+  "method": "forward pass with random Gaussian input",
+  "results": {
+    "ReLU": {
+      "L1": 0.106,
+      "L6": 0.0001,
+      "trend": "decreasing"
+    },
+    "EML": {
+      "L1": 0.02,
+      "L6": 0.005,
+      "trend": "bounded"
+    }
+  },
+  "script": "variance_tracking.py",
+  "date": "2026-04-27"
+}

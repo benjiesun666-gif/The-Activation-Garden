@@ -1,0 +1,9 @@
+{
+  "experiment": "Hybrid EML VGG-8 CIFAR-10",
+  "accuracy": 0.4766,
+  "threshold_T": 2.0,
+  "vs_pure_eml": -0.0667,
+  "date": "2026-04-26",
+  "script": "cifar10/train_cifar10_hybrid.py",
+  "note": "Failed experiment \u2014 linear clamp made exponential steeper at transition point"
+}

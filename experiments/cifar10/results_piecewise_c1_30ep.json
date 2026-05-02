@@ -1,0 +1,6 @@
+{
+  "accuracy": 0.9054,
+  "epochs": 30,
+  "variant": "C1-constrained",
+  "script": "cifar10/train_multiseed.py"
+}

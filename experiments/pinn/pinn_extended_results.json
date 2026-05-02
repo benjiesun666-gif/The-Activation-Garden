@@ -1,0 +1,67 @@
+{
+  "experiment": "Extended PINN",
+  "config": {
+    "epochs": 5000,
+    "lr": 0.001
+  },
+  "results": {
+    "burgers": {
+      "tanh": {
+        "l2": 0.073394,
+        "time": 29.1
+      },
+      "relu": {
+        "l2": 0.184222,
+        "time": 24.7
+      },
+      "eml": {
+        "l2": 0.180384,
+        "time": 76.0
+      }
+    },
+    "allencahn": {
+      "tanh": {
+        "l2": 0.000538,
+        "time": 26.7
+      },
+      "relu": {
+        "l2": 0.019788,
+        "time": 22.7
+      },
+      "eml": {
+        "l2": 0.020435,
+        "time": 73.5
+      }
+    },
+    "euler_beam": {
+      "tanh": {
+        "l2": "nan",
+        "time": 88.6
+      },
+      "relu": {
+        "l2": "nan",
+        "time": 31.2
+      },
+      "eml": {
+        "l2": "nan",
+        "time": 237.7
+      }
+    },
+    "lorenz": {
+      "tanh": {
+        "l2": 16.765551,
+        "time": 22.0
+      },
+      "relu": {
+        "l2": 16.767006,
+        "time": 20.9
+      },
+      "eml": {
+        "l2": 16.781775,
+        "time": 52.0
+      }
+    }
+  },
+  "date": "2026-04-30",
+  "script": "pinn/pinn_extended.py"
+}

@@ -1,0 +1,44 @@
+{
+  "experiment": "CIFAR-10 VGG-8 multi-seed extension",
+  "methods": [
+    "GELU",
+    "Swish",
+    "PReLU"
+  ],
+  "epochs": 30,
+  "seeds_per_method": 3,
+  "results": {
+    "GELU": {
+      "seeds": {
+        "1": 0.9066,
+        "2": 0.9078,
+        "3": 0.9098
+      },
+      "mean": 0.9080666666666667,
+      "std": 0.0013199326582149227,
+      "n_seeds": 3
+    },
+    "Swish": {
+      "seeds": {
+        "1": 0.9093,
+        "2": 0.9091,
+        "3": 0.9115
+      },
+      "mean": 0.9099666666666666,
+      "std": 0.0010873004286866574,
+      "n_seeds": 3
+    },
+    "PReLU": {
+      "seeds": {
+        "1": 0.9,
+        "2": 0.8972,
+        "3": 0.8995
+      },
+      "mean": 0.8988999999999999,
+      "std": 0.0012192894105447945,
+      "n_seeds": 3
+    }
+  },
+  "date": "2026-04-30",
+  "script": "cifar10/train_multiseed_extension.py"
+}

@@ -1,0 +1,27 @@
+{
+  "experiment": "PINN + PiecewiseC1",
+  "config": {
+    "epochs": 5000,
+    "lr": 0.001
+  },
+  "results": {
+    "Heat": {
+      "l2": 0.008172,
+      "time": 148.4
+    },
+    "Burgers": {
+      "l2": 0.09807,
+      "time": 153.0
+    },
+    "AllenCahn": {
+      "l2": 0.003197,
+      "time": 145.3
+    },
+    "Lorenz": {
+      "l2": 16.789974,
+      "time": 87.6
+    }
+  },
+  "date": "2026-04-30",
+  "script": "pinn/pinn_pw.py"
+}

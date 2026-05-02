@@ -1,0 +1,14 @@
+{
+  "experiment": "PReLU CIFAR-10 VGG-8",
+  "accuracy": 0.8985,
+  "architecture": "VGG-8 with PReLU",
+  "params": 1148880,
+  "vs_relu": -0.008300000000000085,
+  "vs_eml": 0.35419999999999996,
+  "date": "2026-04-27",
+  "epochs": 30,
+  "lr": 0.001,
+  "batch_size": 128,
+  "script": "cifar10/train_multiseed_extension.py",
+  "note": "PReLU single-seed result; multi-seed mean from results_multiseed_extension.json"
+}

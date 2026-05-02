@@ -1,0 +1,6 @@
+{
+  "BatchNorm": 0.8337,
+  "InstanceNorm": 0.7534,
+  "NoNorm": 0.7655,
+  "script": "layernorm_test.py"
+}

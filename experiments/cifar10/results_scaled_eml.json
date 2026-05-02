@@ -1,0 +1,9 @@
+{
+  "experiment": "Scaled EML ResNet-18 CIFAR-10",
+  "accuracy": 0.3745,
+  "alpha_beta_stuck": 1.0,
+  "vs_pure_eml": -0.1688,
+  "date": "2026-04-26",
+  "script": "cifar10/train_cifar10_scaled.py",
+  "note": "Failed experiment \u2014 alpha and beta parameters stuck at 1.0, gradients corrupted by exp instability"
+}
